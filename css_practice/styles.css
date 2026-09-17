@@ -1,0 +1,204 @@
+/* CSS-переменные */
+:root {
+    --primary-color: #1a3a5c;
+    --accent-color: #c9a961;
+    --bg-light: #f4f4f4;
+    --text-color: #2c3e50;
+    --border-color: #ddd;
+    --blue: #3498db;
+    --red: #e74c3c;
+}
+
+/* Базовые стили */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: #fafafa;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: darkblue;
+}
+
+/* Селектор по классу */
+.main-header {
+    background-color: var(--bg-light);
+    padding: 20px;
+    border-bottom: 2px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.subtitle {
+    font-style: italic;
+    color: #666;
+}
+
+/* Селектор по ID */
+#site-title {
+    text-align: center;
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+/* Дочерний селектор */
+.content > article {
+    background-color: white;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+/* Селектор потомков */
+.post p {
+    margin-bottom: 10px;
+}
+
+/* Соседний селектор */
+h2 + p {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Карточки */
+.card {
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 10px 0;
+    border: 2px solid currentColor;
+    color: var(--blue);
+}
+
+.card:hover {
+    color: var(--red);
+}
+
+/* Каскад и специфичность */
+p {
+    color: black;
+    font-size: 16px;
+}
+
+.post p {
+    color: darkgreen;
+}
+
+.featured-post p {
+    color: darkred;
+}
+
+.featured-post .intro {
+    color: purple;
+    font-size: 18px;
+}
+
+.important {
+    color: red;
+    font-weight: bold;
+}
+
+li.important {
+    color: darkred;
+    text-decoration: underline;
+}
+
+ul li {
+    color: blue;
+}
+
+.important {
+    color: orange !important;
+}
+
+/* Наследование шрифтов */
+.examples {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/* Псевдоклассы */
+li:hover {
+    background-color: yellow;
+    cursor: pointer;
+}
+
+li:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.main-header:hover {
+    background-color: #e9e9e9;
+}
+
+/* Псевдоэлементы */
+p:first-line {
+    font-weight: bold;
+}
+
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+article {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Медиа-запрос для мобильных */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .content > article {
+        padding: 10px;
+    }
+
+    #site-title {
+        font-size: 1.5em;
+    }
+
+    .examples {
+        display: block;
+    }
+}
+
+/* Медиа-запрос для десктопа */
+@media (min-width: 769px) {
+    .examples {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .examples .card {
+        flex: 1 1 300px;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
+
+/* Подвал */
+.main-footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    border-top: 1px solid var(--border-color);
+    color: #666;
+}
