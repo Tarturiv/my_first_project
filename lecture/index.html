@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма обратной связи — Портфолио</title>
+    <style>
+        /*Базовые стили*/
+        /* box-sizing: border-box для ВСЕХ элементов — отступы и границы
+           включаются в ширину/высота, что упрощает расчёты */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+        }
+
+        /*Эксперимент с наследованием*/
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f4f6f8;
+            color: #222;
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.5;
+        }
+
+        /* Контейнер формы */
+        .form-container {
+            max-width: 640px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 24px;
+            text-align: center;
+            color: #1a1a2e;
+        }
+
+        /*Стилизация fieldset и legend*/
+        fieldset {
+            border: 1px solid #d0d7de;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+
+        legend {
+            font-weight: 600;
+            padding: 0 8px;
+            color: #1a1a2e;
+        }
+
+        /*Стилизация label*/
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        /* Инлайн-лейблы для радио и чекбоксов */
+        .inline-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-right: 16px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        /*Стилизация полей ввода*/
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #c4cdd5;
+            border-radius: 6px;
+            font-size: 14px;
+            margin-bottom: 16px;
+            background: #fff;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        /*Эксперимент с наследованием (продолжение)*/
+        #msg-id {
+            font-family: inherit;
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        /* Фокус на полях */
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        /* Группа радио/чекбоксов */
+        .options-group {
+            margin-bottom: 16px;
+        }
+
+        .options-group > label:first-child {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        /*Эксперимент со специфичностью*/
+        /* 1) Селектор по тегу — самый низкий вес: (0,0,0,1) */
+        button {
+            background: grey;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            width: 100%;
+            font-family: inherit;
+            transition: background 0.2s;
+        }
+
+        /* 2) Селектор по классу — вес выше: (0,0,1,0) */
+        .btn-submit {
+            background: blue;
+        }
+
+        /* 3) Увеличиваем специфичность, НЕ удаляя предыдущие правила
+              и НЕ используя !important.*/
+        button.btn-submit {
+            background: #2563eb;
+        }
+
+        /* Альтернативный вариант с ещё большей специфичностью:
+           .form-container .btn-submit — два класса = (0,0,2,0) */
+        .form-container .btn-submit {
+            background: #1d4ed8;
+        }
+
+        button.btn-submit:hover {
+            background: #1e40af;
+        }
+
+        /* Подсказка под полем */
+        .hint {
+            font-size: 12px;
+            color: #6b7280;
+            margin-top: -12px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h1>Свяжитесь со мной</h1>
+
+        <form action="/feedback" method="POST">
+            <!--Контактные данные-->
+            <fieldset>
+                <legend>Контактная информация</legend>
+
+                <label for="name-id">Имя <span style="color:#e11d48;">*</span></label>
+                <input type="text"
+                       id="name-id"
+                       name="username"
+                       placeholder="Иван Иванов"
+                       required>
+
+                <label for="email-id">Email <span style="color:#e11d48;">*</span></label>
+                <input type="email"
+                       id="email-id"
+                       name="email"
+                       placeholder="you@example.com"
+                       required>
+            </fieldset>
+
+            <!--Детали проекта-->
+            <fieldset>
+                <legend>Детали проекта</legend>
+
+                <label for="project-type-id">Тип проекта</label>
+                <select id="project-type-id" name="project_type">
+                    <option value="">-- Выберите тип --</option>
+                    <option value="website">Веб-сайт</option>
+                    <option value="app">Приложение</option>
+                    <option value="design">Дизайн</option>
+                </select>
+
+                <div class="options-group">
+                    <label>Бюджет</label>
+                    <label class="inline-label">
+                        <input type="radio" name="budget" value="lt50" checked>
+                        &lt; 50к
+                    </label>
+                    <label class="inline-label">
+                        <input type="radio" name="budget" value="50-100">
+                        50к – 100к
+                    </label>
+                    <label class="inline-label">
+                        <input type="radio" name="budget" value="gt100">
+                        &gt; 100к
+                    </label>
+                </div>
+
+                <label for="msg-id">Сообщение</label>
+                <textarea id="msg-id"
+                          name="message"
+                          rows="4"
+                          placeholder="Опишите вашу задачу..."></textarea>
+                <p class="hint">Чем подробнее, тем точнее я смогу ответить.</p>
+            </fieldset>
+
+            <!--Согласие и отправка-->
+            <fieldset>
+                <legend>Подтверждение</legend>
+
+                <label class="inline-label" style="margin-bottom: 16px;">
+                    <input type="checkbox"
+                           name="consent"
+                           value="yes"
+                           required>
+                    Я согласен на обработку персональных данных <span style="color:#e11d48;">*</span>
+                </label>
+
+                <button type="submit" class="btn-submit">Отправить запрос</button>
+            </fieldset>
+        </form>
+    </div>
+
+</body>
+</html>
