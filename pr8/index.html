@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company — цифровые продукты</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles/reset.css" />
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__container">
+      <a href="#" class="logo">
+        <img src="images/logo.webp" alt="Логотип" class="logo__img" width="32" height="32" />
+        <span class="logo__text">Company</span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <ul class="nav__list">
+          <li><a href="#home" class="nav__link">Главная</a></li>
+          <li><a href="#about" class="nav__link">О нас</a></li>
+          <li><a href="#services" class="nav__link">Услуги</a></li>
+          <li><a href="#portfolio" class="nav__link">Портфолио</a></li>
+          <li><a href="#contact" class="nav__link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <button class="cta-button" type="button">Связаться</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero__container">
+        <div class="hero__content">
+          <h1 class="hero__title">Создаём цифровые продукты мирового класса</h1>
+          <p class="hero__description">
+            Мы помогаем бизнесу расти с помощью современных технологий
+            и продуманного дизайна
+          </p>
+          <div class="hero__actions">
+            <button class="btn btn--primary" type="button">Начать проект</button>
+            <button class="btn btn--secondary" type="button">Узнать больше</button>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <img
+            src="images/1.svg"
+            alt="Hero изображение"
+            class="hero__image"
+            width="520"
+            height="400"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features" id="services">
+      <div class="container">
+        <h2 class="section-title">Почему выбирают нас</h2>
+        <div class="features__grid">
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">⚡</div>
+            <h3 class="feature-card__title">Скорость</h3>
+            <p class="feature-card__description">Быстрая разработка и запуск проектов</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">✅</div>
+            <h3 class="feature-card__title">Качество</h3>
+            <p class="feature-card__description">Высокое качество кода и дизайна</p>
+          </article>
+          <article class="feature-card">
+            <div class="feature-card__icon" aria-hidden="true">🛠️</div>
+            <h3 class="feature-card__title">Поддержка</h3>
+            <p class="feature-card__description">Постоянная техническая поддержка</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" id="contact">
+    <div class="container footer__container">
+      <div class="footer__contacts">
+        <a href="mailto:info@company.ru" class="footer__link">info@company.ru</a>
+        <a href="tel:+79991234567" class="footer__link">+7 (999) 123-45-67</a>
+      </div>
+      <div class="footer__socials">
+        <a href="#" class="footer__social">VK</a>
+        <a href="#" class="footer__social">TG</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

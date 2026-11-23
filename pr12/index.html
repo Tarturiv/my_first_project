@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка событий JavaScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="events-tasks.js"></script>
+    <script src="events-tests.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header id="main-header">
+            <h1>Практическая работа: Обработка событий</h1>
+            <p>Реализуйте функции в файле events-tasks.js</p>
+        </header>
+
+        <!-- Область для задач -->
+        <section id="tasks-section">
+
+            <!-- Задача 1: Базовые события -->
+            <div class="task-area" id="task1">
+                <h3>Задача 1: Базовые обработчики событий</h3>
+                <div class="event-demo">
+                    <button id="basic-btn">Нажми меня</button>
+                    <div id="basic-output" class="output">Статус: ожидание события</div>
+                    <div class="color-box" id="color-box">Наведи курсор</div>
+                    <div id="mouse-output" class="output">Координаты мыши: </div>
+                </div>
+            </div>
+
+            <!-- Задача 2: События клавиатуры -->
+            <div class="task-area" id="task2">
+                <h3>Задача 2: События клавиатуры</h3>
+                <div class="keyboard-demo">
+                    <input type="text" id="key-input" placeholder="Печатайте здесь...">
+                    <div id="key-output" class="output">Информация о нажатых клавишах</div>
+                    <div class="key-combination">
+                        <p>Попробуйте комбинации:</p>
+                        <ul>
+                            <li>Ctrl + S</li>
+                            <li>Alt + C</li>
+                            <li>Shift + A</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Задача 3: Делегирование событий -->
+            <div class="task-area" id="task3">
+                <h3>Задача 3: Делегирование событий</h3>
+                <div class="delegation-demo">
+                    <button id="add-item-btn">Добавить элемент</button>
+                    <div class="item-list" id="item-list">
+                        <!-- Элементы сгенерированы для примера (можно добавить до 395) -->
+                        <div class="item" data-id="1">Элемент 1 <span class="delete">x</span></div>
+                        <div class="item" data-id="2">Элемент 2 <span class="delete">x</span></div>
+                        <div class="item" data-id="3">Элемент 3 <span class="delete">x</span></div>
+                        <div class="item" data-id="4">Элемент 4 <span class="delete">x</span></div>
+                        <div class="item" data-id="5">Элемент 5 <span class="delete">x</span></div>
+                        <div class="item" data-id="6">Элемент 6 <span class="delete">x</span></div>
+                        <div class="item" data-id="7">Элемент 7 <span class="delete">x</span></div>
+                        <div class="item" data-id="8">Элемент 8 <span class="delete">x</span></div>
+                        <div class="item" data-id="9">Элемент 9 <span class="delete">x</span></div>
+                        <div class="item" data-id="10">Элемент 10 <span class="delete">x</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Задача 4: Предотвращение поведения -->
+            <div class="task-area" id="task4">
+                <h3>Задача 4: Предотвращение поведения</h3>
+                <div class="prevention-demo">
+                    <a href="https://example.com" id="prevent-link" class="prevent-link">
+                        Эта ссылка не должна работать
+                    </a>
+                    <form id="prevent-form" class="prevent-form">
+                        <input type="text" placeholder="Введите текст" required>
+                        <button type="submit">Отправить (не должно работать)</button>
+                    </form>
+                    <div id="prevention-output" class="output">События формы и ссылки перехвачены</div>
+                </div>
+            </div>
+
+            <!-- Задача 5: Кастомные события -->
+            <div class="task-area" id="task5">
+                <h3>Задача 5: Кастомные события</h3>
+                <div class="custom-events-demo">
+                    <button id="trigger-custom">Запустить кастомное событие</button>
+                    <button id="multiple-listeners">Добавить несколько обработчиков</button>
+                    <div id="custom-output" class="output">Кастомные события: </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <script src="events-tasks.js"></script>
+</body>
+</html>

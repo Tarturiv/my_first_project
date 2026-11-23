@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    line-height: 1.5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header#main-header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.task-area {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.task-area h3 {
+    margin-bottom: 14px;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+}
+
+.output {
+    margin-top: 10px;
+    padding: 10px;
+    background: #eef2f7;
+    border-radius: 6px;
+    font-family: monospace;
+    font-size: 14px;
+}
+
+/* Задача 1 */
+.event-demo button {
+    padding: 10px 18px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    background: #3b82f6;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.event-demo button:hover {
+    background: #2563eb;
+}
+
+.color-box {
+    width: 200px;
+    height: 80px;
+    margin-top: 14px;
+    background: #cbd5e1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #334155;
+    transition: background 0.3s;
+}
+
+/* Задача 2 */
+#key-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.key-combination ul {
+    margin-top: 8px;
+    padding-left: 20px;
+}
+
+/* Задача 3 */
+.delegation-demo {
+    max-height: 320px;
+    overflow-y: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+#add-item-btn {
+    margin-bottom: 10px;
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    background: #10b981;
+    color: #fff;
+    cursor: pointer;
+}
+#add-item-btn:hover {
+    background: #059669;
+}
+
+.item-list .item,
+.delegation-demo .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    margin-bottom: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.item:hover {
+    background: #e0f2fe;
+}
+
+.item .delete {
+    color: #ef4444;
+    font-weight: bold;
+    padding: 0 6px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.item .delete:hover {
+    background: #fee2e2;
+}
+
+/* Задача 4 */
+.prevent-link {
+    display: inline-block;
+    margin-bottom: 14px;
+    color: #3b82f6;
+    text-decoration: underline;
+}
+
+.prevent-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.prevent-form input {
+    flex: 1;
+    min-width: 180px;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.prevent-form button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    background: #f59e0b;
+    color: #fff;
+    cursor: pointer;
+}
+.prevent-form button:hover {
+    background: #d97706;
+}
+
+/* Задача 5 */
+.custom-events-demo button {
+    padding: 10px 16px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 6px;
+    background: #8b5cf6;
+    color: #fff;
+    cursor: pointer;
+}
+.custom-events-demo button:hover {
+    background: #7c3aed;
+}
